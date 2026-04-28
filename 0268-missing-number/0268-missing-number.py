@@ -1,15 +1,16 @@
 class Solution(object):
     def missingNumber(self, nums):
         n=len(nums)
-        a = 0
-        if n == 1:
-            if nums[a] == 1:
-                return 0
-            return 1
-        for i in range(1,n+1):
-            if i not in nums:
-                return i
-        return 0
+        freq_map = {}
+        for i in range(0,n+1):
+            freq_map[i] = 0
+            if i in nums:
+                freq_map[i] = 1
+        for key,value in freq_map.items():
+            if value == 0:
+                return key    
+
+                
             
             
             
